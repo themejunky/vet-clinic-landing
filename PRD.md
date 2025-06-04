@@ -2,7 +2,7 @@
 ## Veterinary Clinic Landing Page
 
 ### Project Overview
-Create a professional, elegant landing page for a family veterinary clinic using Next.js and Tailwind CSS with blue and white color scheme.
+Create a professional, elegant landing page for a family veterinary clinic using Next.js and Tailwind CSS with red and white color scheme.
 
 ### Objectives
 - Showcase veterinary services and pricing in a professional manner
@@ -91,10 +91,10 @@ Create a professional, elegant landing page for a family veterinary clinic using
 ### Design Requirements
 
 #### Color Scheme
-- **Primary**: Blue (#1E40AF, #3B82F6, #60A5FA)
+- **Primary**: Red (#991B1B, #DC2626, #EF4444)
 - **Secondary**: White (#FFFFFF, #F8FAFC, #F1F5F9)
-- **Accent**: Professional blue variations
-- **Text**: Dark blue/navy for readability
+- **Accent**: Professional red variations
+- **Text**: Dark red/burgundy for readability
 
 #### Typography
 - Clean, professional fonts

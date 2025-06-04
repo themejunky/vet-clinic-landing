@@ -4,7 +4,7 @@ A professional, elegant veterinary clinic landing page built with Next.js and Ta
 
 ## 🏥 Features
 
-- **Professional Design**: Clean, modern UI with blue and white color scheme
+- **Professional Design**: Clean, modern UI with red and white color scheme
 - **Appointment Booking**: Contact form with Resend email integration
 - **Service Showcase**: Comprehensive veterinary services presentation
 - **Transparent Pricing**: Clear pricing structure for all services
@@ -99,9 +99,9 @@ vet-clinic-landing/
 ## 🎨 Design System
 
 ### Color Palette
-- **Primary Blue**: `#1E40AF`, `#3B82F6`, `#60A5FA`
+- **Primary Red**: `#991B1B`, `#DC2626`, `#EF4444`
 - **Secondary**: White and light grays (`#F8FAFC`, `#F1F5F9`)
-- **Accent**: Professional blue variations
+- **Accent**: Professional red variations
 
 ### Typography
 - **Font**: Inter (Google Fonts)
