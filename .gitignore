@@ -77,7 +77,8 @@ dist
 
 # Gatsby files
 .cache/
-public
+# public - Allow public directory for Next.js static files
+# public
 
 # Storybook build outputs
 .out

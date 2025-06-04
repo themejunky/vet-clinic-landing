@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Test - VetCare Family</title>
+    <style>
+        body { font-family: Arial, sans-serif; padding: 20px; }
+        .image-test { margin: 20px 0; padding: 20px; border: 1px solid #ccc; }
+        .image-test img { max-width: 300px; height: 200px; object-fit: cover; border: 1px solid #ddd; }
+        .status { margin: 10px 0; }
+        .error { color: red; }
+        .success { color: green; }
+    </style>
+</head>
+<body>
+    <h1>VetCare Family - Image Loading Test</h1>
+    
+    <h2>Veterinary Images</h2>
+    <div class="image-test">
+        <h3>1. Ivan Rojas Urrea</h3>
+        <img src="/images/vet-images/ivan-rojas-urrea-EsW5atCWiww-unsplash.jpg" alt="Test 1" onload="showStatus(this, 'success')" onerror="showStatus(this, 'error')">
+        <div class="status" id="status-1">Loading...</div>
+    </div>
+    
+    <div class="image-test">
+        <h3>2. Artur Tumasjan</h3>
+        <img src="/images/vet-images/artur-tumasjan-qLzWvcQq-V8-unsplash.jpg" alt="Test 2" onload="showStatus(this, 'success')" onerror="showStatus(this, 'error')">
+        <div class="status" id="status-2">Loading...</div>
+    </div>
+    
+    <div class="image-test">
+        <h3>3. Lydia Torrey</h3>
+        <img src="/images/vet-images/lydia-torrey-AovflqCt9Ws-unsplash.jpg" alt="Test 3" onload="showStatus(this, 'success')" onerror="showStatus(this, 'error')">
+        <div class="status" id="status-3">Loading...</div>
+    </div>
+    
+    <div class="image-test">
+        <h3>4. Karsten Winegeart</h3>
+        <img src="/images/vet-images/karsten-winegeart-loJL4ijUobg-unsplash.jpg" alt="Test 4" onload="showStatus(this, 'success')" onerror="showStatus(this, 'error')">
+        <div class="status" id="status-4">Loading...</div>
+    </div>
+    
+    <div class="image-test">
+        <h3>5. Priscilla Du Preez</h3>
+        <img src="/images/vet-images/priscilla-du-preez-2hc6ocDAsNY-unsplash.jpg" alt="Test 5" onload="showStatus(this, 'success')" onerror="showStatus(this, 'error')">
+        <div class="status" id="status-5">Loading...</div>
+    </div>
+    
+    <div class="image-test">
+        <h3>6. Ayla Verschueren</h3>
+        <img src="/images/vet-images/ayla-verschueren-nWKMtmbpxQs-unsplash.jpg" alt="Test 6" onload="showStatus(this, 'success')" onerror="showStatus(this, 'error')">
+        <div class="status" id="status-6">Loading...</div>
+    </div>
+    
+    <h2>Review Images</h2>
+    <div class="image-test">
+        <h3>1. Aiony Haust</h3>
+        <img src="/images/reviews/aiony-haust-3TLl_97HNJo-unsplash.jpg" alt="Review 1" onload="showStatus(this, 'success')" onerror="showStatus(this, 'error')">
+        <div class="status" id="status-r1">Loading...</div>
+    </div>
+    
+    <div class="image-test">
+        <h3>2. Joseph Gonzalez</h3>
+        <img src="/images/reviews/joseph-gonzalez-iFgRcqHznqg-unsplash.jpg" alt="Review 2" onload="showStatus(this, 'success')" onerror="showStatus(this, 'error')">
+        <div class="status" id="status-r2">Loading...</div>
+    </div>
+    
+    <div class="image-test">
+        <h3>3. Ivana Cajina</h3>
+        <img src="/images/reviews/ivana-cajina-_7LbC5J-jw4-unsplash.jpg" alt="Review 3" onload="showStatus(this, 'success')" onerror="showStatus(this, 'error')">
+        <div class="status" id="status-r3">Loading...</div>
+    </div>
+    
+    <div class="image-test">
+        <h3>4. Charles Etoroma</h3>
+        <img src="/images/reviews/charles-etoroma-95UF6LXe-Lo-unsplash.jpg" alt="Review 4" onload="showStatus(this, 'success')" onerror="showStatus(this, 'error')">
+        <div class="status" id="status-r4">Loading...</div>
+    </div>
+    
+    <div class="image-test">
+        <h3>5. Ian Dooley</h3>
+        <img src="/images/reviews/ian-dooley-d1UPkiFd04A-unsplash.jpg" alt="Review 5" onload="showStatus(this, 'success')" onerror="showStatus(this, 'error')">
+        <div class="status" id="status-r5">Loading...</div>
+    </div>
+
+    <script>
+        let imageCount = 0;
+        function showStatus(img, status) {
+            imageCount++;
+            const statusDiv = img.nextElementSibling;
+            if (status === 'success') {
+                statusDiv.textContent = `✅ Loaded successfully (${img.naturalWidth}x${img.naturalHeight})`;
+                statusDiv.className = 'status success';
+            } else {
+                statusDiv.textContent = '❌ Failed to load';
+                statusDiv.className = 'status error';
+            }
+            
+            if (imageCount === 11) {
+                document.body.insertAdjacentHTML('beforeend', '<h2>All tests completed!</h2>');
+            }
+        }
+    </script>
+</body>
+</html> 

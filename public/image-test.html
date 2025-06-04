@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VetCare Family - Image Loading Test</title>
+    <style>
+        body { 
+            font-family: Arial, sans-serif; 
+            padding: 20px; 
+            background: #f5f5f5;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+        }
+        .image-grid { 
+            display: grid; 
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
+            gap: 20px; 
+            margin: 20px 0; 
+        }
+        .image-card { 
+            border: 1px solid #ddd; 
+            border-radius: 8px; 
+            overflow: hidden;
+            background: white;
+        }
+        .image-card img { 
+            width: 100%; 
+            height: 200px; 
+            object-fit: cover; 
+            display: block;
+        }
+        .image-info {
+            padding: 15px;
+        }
+        .image-info h3 {
+            margin: 0 0 10px 0;
+            color: #333;
+        }
+        .status { 
+            padding: 10px;
+            margin: 10px 0; 
+            border-radius: 4px;
+        }
+        .error { 
+            background: #ffebee; 
+            color: #c62828; 
+            border: 1px solid #ef9a9a;
+        }
+        .success { 
+            background: #e8f5e8; 
+            color: #2e7d32; 
+            border: 1px solid #a5d6a7;
+        }
+        .loading {
+            background: #fff3e0; 
+            color: #f57c00; 
+            border: 1px solid #ffcc02;
+        }
+        h1 { color: #1976d2; text-align: center; }
+        h2 { color: #333; border-bottom: 2px solid #1976d2; padding-bottom: 10px; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>VetCare Family - Image Loading Verification</h1>
+        <div id="summary" class="status loading">Loading images...</div>
+        
+        <h2>Veterinary Images</h2>
+        <div class="image-grid">
+            <div class="image-card">
+                <img src="/images/vet-images/ivan-rojas-urrea-EsW5atCWiww-unsplash.jpg" 
+                     alt="Veterinary consultation" 
+                     onload="imageLoaded(this)" 
+                     onerror="imageError(this)"
+                     data-name="Ivan Rojas Urrea - Consultation">
+                <div class="image-info">
+                    <h3>Veterinary Consultation</h3>
+                    <div class="status loading">Loading...</div>
+                </div>
+            </div>
+            
+            <div class="image-card">
+                <img src="/images/vet-images/artur-tumasjan-qLzWvcQq-V8-unsplash.jpg" 
+                     alt="Veterinary team" 
+                     onload="imageLoaded(this)" 
+                     onerror="imageError(this)"
+                     data-name="Artur Tumasjan - Team">
+                <div class="image-info">
+                    <h3>Veterinary Team</h3>
+                    <div class="status loading">Loading...</div>
+                </div>
+            </div>
+            
+            <div class="image-card">
+                <img src="/images/vet-images/lydia-torrey-AovflqCt9Ws-unsplash.jpg" 
+                     alt="Professional care" 
+                     onload="imageLoaded(this)" 
+                     onerror="imageError(this)"
+                     data-name="Lydia Torrey - Care">
+                <div class="image-info">
+                    <h3>Professional Care</h3>
+                    <div class="status loading">Loading...</div>
+                </div>
+            </div>
+            
+            <div class="image-card">
+                <img src="/images/vet-images/karsten-winegeart-loJL4ijUobg-unsplash.jpg" 
+                     alt="Modern equipment" 
+                     onload="imageLoaded(this)" 
+                     onerror="imageError(this)"
+                     data-name="Karsten Winegeart - Equipment">
+                <div class="image-info">
+                    <h3>Modern Equipment</h3>
+                    <div class="status loading">Loading...</div>
+                </div>
+            </div>
+            
+            <div class="image-card">
+                <img src="/images/vet-images/priscilla-du-preez-2hc6ocDAsNY-unsplash.jpg" 
+                     alt="Animal care" 
+                     onload="imageLoaded(this)" 
+                     onerror="imageError(this)"
+                     data-name="Priscilla Du Preez - Animal Care">
+                <div class="image-info">
+                    <h3>Animal Care</h3>
+                    <div class="status loading">Loading...</div>
+                </div>
+            </div>
+            
+            <div class="image-card">
+                <img src="/images/vet-images/ayla-verschueren-nWKMtmbpxQs-unsplash.jpg" 
+                     alt="Veterinary clinic" 
+                     onload="imageLoaded(this)" 
+                     onerror="imageError(this)"
+                     data-name="Ayla Verschueren - Clinic">
+                <div class="image-info">
+                    <h3>Veterinary Clinic</h3>
+                    <div class="status loading">Loading...</div>
+                </div>
+            </div>
+        </div>
+        
+        <h2>Review Profile Images</h2>
+        <div class="image-grid">
+            <div class="image-card">
+                <img src="/images/reviews/aiony-haust-3TLl_97HNJo-unsplash.jpg" 
+                     alt="Ana Popescu" 
+                     onload="imageLoaded(this)" 
+                     onerror="imageError(this)"
+                     data-name="Aiony Haust - Ana">
+                <div class="image-info">
+                    <h3>Ana Popescu Profile</h3>
+                    <div class="status loading">Loading...</div>
+                </div>
+            </div>
+            
+            <div class="image-card">
+                <img src="/images/reviews/joseph-gonzalez-iFgRcqHznqg-unsplash.jpg" 
+                     alt="Mihai Ionescu" 
+                     onload="imageLoaded(this)" 
+                     onerror="imageError(this)"
+                     data-name="Joseph Gonzalez - Mihai">
+                <div class="image-info">
+                    <h3>Mihai Ionescu Profile</h3>
+                    <div class="status loading">Loading...</div>
+                </div>
+            </div>
+            
+            <div class="image-card">
+                <img src="/images/reviews/ivana-cajina-_7LbC5J-jw4-unsplash.jpg" 
+                     alt="Elena Gheorghiu" 
+                     onload="imageLoaded(this)" 
+                     onerror="imageError(this)"
+                     data-name="Ivana Cajina - Elena">
+                <div class="image-info">
+                    <h3>Elena Gheorghiu Profile</h3>
+                    <div class="status loading">Loading...</div>
+                </div>
+            </div>
+            
+            <div class="image-card">
+                <img src="/images/reviews/charles-etoroma-95UF6LXe-Lo-unsplash.jpg" 
+                     alt="Radu Cristescu" 
+                     onload="imageLoaded(this)" 
+                     onerror="imageError(this)"
+                     data-name="Charles Etoroma - Radu">
+                <div class="image-info">
+                    <h3>Radu Cristescu Profile</h3>
+                    <div class="status loading">Loading...</div>
+                </div>
+            </div>
+            
+            <div class="image-card">
+                <img src="/images/reviews/ian-dooley-d1UPkiFd04A-unsplash.jpg" 
+                     alt="Carmen Dumitrescu" 
+                     onload="imageLoaded(this)" 
+                     onerror="imageError(this)"
+                     data-name="Ian Dooley - Carmen">
+                <div class="image-info">
+                    <h3>Carmen Dumitrescu Profile</h3>
+                    <div class="status loading">Loading...</div>
+                </div>
+            </div>
+        </div>
+        
+        <div id="results" style="margin-top: 30px; padding: 20px; background: #f5f5f5; border-radius: 8px;">
+            <h3>Test Results</h3>
+            <p id="stats">Testing in progress...</p>
+        </div>
+    </div>
+
+    <script>
+        let loadedCount = 0;
+        let errorCount = 0;
+        let totalImages = 11;
+        
+        function imageLoaded(img) {
+            loadedCount++;
+            const statusDiv = img.parentNode.querySelector('.status');
+            statusDiv.textContent = `✅ Loaded successfully (${img.naturalWidth}x${img.naturalHeight})`;
+            statusDiv.className = 'status success';
+            updateSummary();
+        }
+        
+        function imageError(img) {
+            errorCount++;
+            const statusDiv = img.parentNode.querySelector('.status');
+            statusDiv.textContent = '❌ Failed to load - Image not found';
+            statusDiv.className = 'status error';
+            updateSummary();
+        }
+        
+        function updateSummary() {
+            const completedCount = loadedCount + errorCount;
+            const summaryDiv = document.getElementById('summary');
+            const statsP = document.getElementById('stats');
+            
+            if (completedCount === totalImages) {
+                if (errorCount === 0) {
+                    summaryDiv.textContent = `🎉 All ${totalImages} images loaded successfully!`;
+                    summaryDiv.className = 'status success';
+                } else {
+                    summaryDiv.textContent = `⚠️ ${loadedCount} images loaded, ${errorCount} failed to load`;
+                    summaryDiv.className = 'status error';
+                }
+            } else {
+                summaryDiv.textContent = `Loading... ${completedCount}/${totalImages} images processed`;
+                summaryDiv.className = 'status loading';
+            }
+            
+            statsP.innerHTML = `
+                <strong>Progress:</strong> ${completedCount}/${totalImages} images processed<br>
+                <strong>✅ Successfully loaded:</strong> ${loadedCount}<br>
+                <strong>❌ Failed to load:</strong> ${errorCount}<br>
+                <strong>Status:</strong> ${completedCount === totalImages ? 'Complete' : 'In progress...'}
+            `;
+        }
+        
+        // Initial call
+        updateSummary();
+    </script>
+</body>
+</html> 
