@@ -1,4 +1,4 @@
-import type { Metadata } from 'next'
+import type { Metadata, Viewport } from 'next'
 import { Inter } from 'next/font/google'
 import React from 'react'
 import './globals.css'
@@ -6,6 +6,7 @@ import './globals.css'
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://vetcare-family.com'),
   title: 'VetCare Family Clinic | Professional Veterinary Services in Bucharest',
   description: 'Professional veterinary care for your beloved pets. Located in Bucharest, we offer comprehensive veterinary services with a caring, family-oriented approach.',
   keywords: 'veterinary, vet clinic, pet care, Bucharest, Romania, animal hospital, pet health',
@@ -16,8 +17,12 @@ export const metadata: Metadata = {
     type: 'website',
     locale: 'en_US',
   },
-  viewport: 'width=device-width, initial-scale=1',
   robots: 'index, follow',
+}
+
+export const viewport: Viewport = {
+  width: 'device-width',
+  initialScale: 1,
 }
 
 export default function RootLayout({

@@ -7,8 +7,11 @@ const nextConfig = {
     dangerouslyAllowSVG: true,
     contentDispositionType: 'attachment',
     contentSecurityPolicy: "default-src 'self'; script-src 'none'; sandbox;",
-    unoptimized: true,
+    unoptimized: true, // Required for static export
   },
+  // Enable static export for better deployment compatibility
+  output: 'export',
+  trailingSlash: true,
   // Remove experimental optimizeCss to fix build warnings
   // experimental: {
   //   optimizeCss: true,
